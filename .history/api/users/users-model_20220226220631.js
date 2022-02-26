@@ -13,8 +13,6 @@ function findUsername(username) {
 	return db('users').where('username', username).first();
 }
 
-
-
 module.exports = {
 	getUsers,
 	getUserByID,

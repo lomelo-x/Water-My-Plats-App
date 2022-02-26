@@ -9,14 +9,12 @@ function getUserByID(user_id) {
 	return db('users').where('user_id', user_id).first();
 }
 
-function findUsername(username) {
+function findByUsername(username) {
 	return db('users').where('username', username).first();
 }
-
-
 
 module.exports = {
 	getUsers,
 	getUserByID,
-	findUsername,
+	findUsersByUsername,
 };

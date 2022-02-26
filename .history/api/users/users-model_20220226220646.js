@@ -14,7 +14,6 @@ function findUsername(username) {
 }
 
 
-
 module.exports = {
 	getUsers,
 	getUserByID,

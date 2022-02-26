@@ -30,15 +30,25 @@ async function createUser(user) {
 async function updateUser(user, user_id) {
 	const [updatedUser] = await db('users')
 		.where('user_id', user_id)
-		.update(user, ['user_id', 'username', 'password', 'phone']);
+		.update(user, [
+            'user_id',
+            'username',
+            'password',
+            'phone'
+        ]);
 	return updatedUser;
 }
 
 async function deleteUser(user_id) {
 	const [deletedUser] = await db('users')
 		.where('user_id', user_id)
-		.delete(['user_id', 'username', 'password', 'phone']);
-	return deletedUser;
+		.delete(user [
+            'user_id',
+            'username',
+            'password',
+            'phone'
+        ]);
+	return updatedUser;
 }
 
 module.exports = {
@@ -46,6 +56,4 @@ module.exports = {
 	getUserByID,
 	findUsername,
 	createUser,
-	updateUser,
-	deleteUser,
 };

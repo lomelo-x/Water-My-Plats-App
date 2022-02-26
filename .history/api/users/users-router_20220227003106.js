@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 		.catch(next);
 });
 
-router.get('/:id', checkIfUserExists, (req, res) => {
+router.get('/:id', checkIfUserExists, (req, res, next) => {
 	res.json(req.user);
 });
 

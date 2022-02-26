@@ -8,10 +8,7 @@ async function checkIfUserExists(req, res, next) {
 			message: 'user does not exist',
 		});
 	}
-	req.user = user;
-	next();
 }
-
 module.exports = {
 	checkIfUserExists,
 };

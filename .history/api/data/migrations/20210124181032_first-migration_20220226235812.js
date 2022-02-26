@@ -11,7 +11,7 @@ exports.up = async (knex) => {
 			plants.increments('plant_id');
 			plants.string('plant_name', 128).notNull().unique();
 			plants.string('species', 128);
-			plants.integer('h20Frequency', 7);
+			plants.integer('h20_frequency', 7);
 			plants.text('image_url', 500);
 			plants.binary('uploaded_image', 128);
 			plants

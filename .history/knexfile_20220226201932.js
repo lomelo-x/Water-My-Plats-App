@@ -1,4 +1,12 @@
 require('dotenv').config()
+/*
+  Put the above in your .env file. Some adjustments in the connection URLs will be needed:
+
+   
+    - database_name (use the real name of the development database you created in pgAdmin 4)
+    - testing_database_name (use the real name of the testing database you created in pgAdmin 4)
+
+*/
 const pg = require('pg')
 
 if (process.env.DATABASE_URL) {

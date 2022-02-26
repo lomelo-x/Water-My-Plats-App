@@ -34,8 +34,7 @@ async function updateUser(user, user_id) {
             'user_id',
             'username',
             'password',
-            'phone'
-        ]);
+            'phone']);
 	return updatedUser;
 }
 

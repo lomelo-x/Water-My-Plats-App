@@ -31,11 +31,9 @@ async function updateUser(user, user_id) {
 	const [updatedUser] = await db('users')
 		.where('user_id', user_id)
 		.update(user, [
-            'user_id',
-            'username',
-            'password',
-            'phone'
-        ]);
+            'user_id', 
+            'username', 
+            'password', 'phone']);
 	return updatedUser;
 }
 

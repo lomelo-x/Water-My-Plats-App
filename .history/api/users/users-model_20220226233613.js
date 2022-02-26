@@ -18,30 +18,14 @@ function findUsername(username) {
 // }
 
 async function createUser(user) {
-	const [newUser] = await db('users').insert(user, [
-		'user_id',
-		'username',
-		'password',
-		'phone',
-	]);
-	return newUser;
-}
-
-async function updateUser(user, user_id) {
-	const [updatedUser] = await db('users')
-		.where('user_id', user_id)
-		.update(user, [
-            'user_id',
-            'username',
-            'password',
-            'phone'
-        ]);
-	return updatedUser;
+    const [newUser] = await db('users')
+        .insert(user, [
+            
+        ])
 }
 
 module.exports = {
 	getUsers,
 	getUserByID,
 	findUsername,
-	createUser,
 };

@@ -24,24 +24,22 @@ async function createUser(user) {
 		'password',
 		'phone',
 	]);
-	return newUser;
+    return newUser;
 }
 
 async function updateUser(user, user_id) {
-	const [updatedUser] = await db('users')
-		.where('user_id', user_id)
-		.update(user, [
-            'user_id',
-            'username',
-            'password',
-            'phone'
-        ]);
-	return updatedUser;
+    const [updateUser] = await db('users').where('user_id', user_id).update(user, [
+        'user_id',
+        'username',
+		'password',
+		'phone',
+    ])
 }
+
 
 module.exports = {
 	getUsers,
 	getUserByID,
 	findUsername,
-	createUser,
+    createUser,
 };

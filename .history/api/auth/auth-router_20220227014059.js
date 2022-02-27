@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../users/users-model');
+const User = require('./');
 const encrypt = require('bcryptjs');
 const {
 	checkUserInput,

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../users/users-model');
+const User = require('../users/user-model');
 const encrypt = require('bcryptjs');
 const {
 	checkUserInput,
@@ -28,15 +28,14 @@ router.post(
 	}
 );
 
-router.post('/login', checkUserInput, checkUsernameExists,
-(req, res, next) => {
+router.post('/login', checkUserInput, checkUsernameExists, (req, res, next) => {
 	const token = userToken(req.user);
 	const passwordValid = encrypt.compareSync(
 		req.body.password,
 		req.user.password
 	);
 	if (passwordValid) {
-		return next({
+		res.({
 			status: 201,
 			user_id: req.user.user_id,
 			message: `welcome, ${req.user.username}`,

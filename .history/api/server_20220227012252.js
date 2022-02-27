@@ -1,6 +1,7 @@
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
+const db = require('./data/db-config')
 
 const authRouter = require('./auth/auth-router')
 const usersRouter = require('./users/users-router')

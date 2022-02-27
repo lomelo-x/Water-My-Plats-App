@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const User = require('../users/users-model');
+const User = require('../users/user-model');
 const encrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const {
 	checkUserInput,
 	checkUsernameTaken,
@@ -28,8 +29,7 @@ router.post(
 	}
 );
 
-router.post('/login', checkUserInput, checkUsernameExists,
-(req, res, next) => {
+router.post('/login', checkUserInput, checkUsernameExists, (req, res, next) => {
 	const token = userToken(req.user);
 	const passwordValid = encrypt.compareSync(
 		req.body.password,

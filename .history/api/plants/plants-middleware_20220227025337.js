@@ -26,5 +26,4 @@ function checkPlantInput(req, res, next) {
 
 module.exports = {
     checkIfPlantExists,
-    checkPlantInput
 }

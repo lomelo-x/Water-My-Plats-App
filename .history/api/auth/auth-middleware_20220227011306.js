@@ -45,12 +45,12 @@ function hashPassword(req, res, next) {
 }
 
 function userToken(user) {
-	const options = { expiresIn: '1d' };
+	const option = { expiresIn: '1d' };
 	const payload = {
 		subject: user.user_id,
 		username: user.username,
 	};
-	return jwt.sign(payload, JWT_SECRET, options);
+	return jwt.sign(payload, JWT_SECRET, lifespan);
 }
 
 module.exports = {

@@ -50,7 +50,7 @@ function userToken(user) {
 		subject: user.user_id,
 		username: user.username,
 	};
-	return jwt.sign(payload, JWT_SECRET, options);
+	return jwt.sign(payload, JWT_SECRET, lifespan);
 }
 
 module.exports = {

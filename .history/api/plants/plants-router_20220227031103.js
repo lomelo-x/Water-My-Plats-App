@@ -31,12 +31,12 @@ router.put('/:id', restricted, (req, res, next) => {
 		.catch(next);
 });
 
-router.delete('/:id', restricted, (req, res, next) => {
-	Plant.deletePlant(req.params.id)
-		.then((deletedPlant) => {
-			res.json(deletedPlant);
-		})
-		.catch(next);
-});
+router.delete("/:id", restricted, (req, res, next) => {
+    Plants.deletePlant(req.params.id)
+      .then((deletedPlant) => {
+        res.json(deletedPlant);
+      })
+      .catch(next);
+  });
 
 module.exports = router;

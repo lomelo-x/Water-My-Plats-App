@@ -5,7 +5,7 @@ function getPlants() {
 }
 
 function getPlantByID(plant_id) {
-	return db('plants').where('plant_id', plant_id);
+	return db('plants').where('plant_id', plant_id).first();
 }
 
 function getPlantsByUserID(user_id) {

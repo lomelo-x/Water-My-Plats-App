@@ -5,7 +5,7 @@ function getPlants() {
 }
 
 function getPlantByID(plant_id) {
-	return db('plants').where('plant_id', plant_id);
+	return db('plants').where('plant_id', plant_id).first();
 }
 
 function getPlantsByUserID(user_id) {
@@ -36,8 +36,8 @@ async function updatePlant(plant, plant_id) {
 			'plant_name',
 			'species',
 			'h20Frequency',
-			//'uploaded_image',
-			//'user_id',
+			'uploaded_image',
+			'user_id',
 		]);
 	return updatedPlant;
 }
@@ -50,8 +50,8 @@ async function deletePlant(plant_id) {
 			'plant_name',
 			'species',
 			'h20Frequency',
-			//'uploaded_image',
-			//'user_id',
+			'uploaded_image',
+			'user_id',
 		]);
 	return deletedPlant;
 }

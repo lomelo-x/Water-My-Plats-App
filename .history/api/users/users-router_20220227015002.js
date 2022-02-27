@@ -30,12 +30,4 @@ router.put(
 	}
 );
 
-router.delete('/:id', checkIfUserExists, restricted, (req, res, next) => {
-	User.deleteUser(req.params.id)
-		.then((deletedUser) => {
-			res.json(deletedUser);
-		})
-		.catch(next);
-});
-
 module.exports = router;

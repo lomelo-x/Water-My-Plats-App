@@ -28,10 +28,10 @@ async function createPlant(plant) {
 	return newPlant;
 }
 
-async function updatePlant(plant, plant_id) {
-	const [updatedPlant] = await db('plants')
+async function updatePlant(user, plant_id) {
+	const [updatedUser] = await db('plants')
 		.where('plant_id', plant_id)
-		.update(plant, [
+		.update(user, [
 			'plant_id',
 			'plant_name',
 			'species',
@@ -39,7 +39,7 @@ async function updatePlant(plant, plant_id) {
 			'uploaded_image',
 			'user_id',
 		]);
-	return updatedPlant;
+	return updatedUser;
 }
 
 async function deletePlant(plant_id) {

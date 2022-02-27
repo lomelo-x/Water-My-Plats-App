@@ -24,11 +24,7 @@ router.post('/', checkPlantInput, restricted, (req, res, next) => {
 });
 
 router.put('/:id', restricted, (req, res, next) => {
-	Plant.updatePlant(req.body, req.params.id)
-		.then((updatedPlant) => {
-			res.json(updatedPlant);
-		})
-		.catch(next);
-});
+    Plant.updatePlant(req.body, req.)
+} )
 
 module.exports = router;

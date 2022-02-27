@@ -16,11 +16,9 @@ router.get('/:id', checkIfPlantExists, (req, res) => {
 });
 
 router.post('/', checkPlantInput, restricted, (req, res, next) => {
-	Plant.createPlant(req.body)
-		.then((newPlant) => {
-			res.json(newPlant);
-		})
-		.catch(next);
-});
+    Plant.createPlant(req.body).then(newPlant => {
+        res.j
+    })
+})
 
 module.exports = router;

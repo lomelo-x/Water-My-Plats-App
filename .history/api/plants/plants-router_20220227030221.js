@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const restricted = require('../restricted/restricted-middleware');
 const Plant = require('./plants-model');
-const { checkIfPlantExists, checkPlantInput } = require('./plants-middleware');
+const { checkIfPlantExists, CheckPlantInput } = require('./plants-middleware');
 
 router.get('/', (req, res, next) => {
 	Plant.getPlants()
@@ -11,16 +11,8 @@ router.get('/', (req, res, next) => {
 		.catch(next);
 });
 
-router.get('/:id', checkIfPlantExists, (req, res) => {
+router.get('/:id', checkIfPlantExists, (req, res, next) => {
 	res.json(req.plant);
-});
-
-router.post('/', checkPlantInput, restricted, (req, res, next) => {
-	Plant.createPlant(req.body)
-		.then((newPlant) => {
-			res.json(newPlant);
-		})
-		.catch(next);
 });
 
 module.exports = router;

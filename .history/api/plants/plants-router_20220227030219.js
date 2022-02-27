@@ -1,0 +1,18 @@
+const router = require('express').Router();
+const restricted = require('../restricted/restricted-middleware');
+const Plant = require('./plants-model');
+const { checkIfPlantExists, CheckPlantInput } = require('./plants-middleware');
+
+router.get('/', (req, res, next) => {
+	Plant.getPlants()
+		.then((plants) => {
+			res.json(plants);
+		})
+		.catch(next);
+});
+
+router.get("/:id", checkIfPlantExists, (req, res, next) => {
+    res.json(req.plant);
+  });
+
+module.exports = router;
